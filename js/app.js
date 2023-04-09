@@ -1,14 +1,13 @@
-// obtener elementos del DOM
 const form = document.querySelector("form");
 const input = form.querySelector("input");
-const articleList = document.getElementById("article-list");
+const articulos = document.getElementById("articulo");
 
 // obtener los elementos de la lista de artículos
-const articles = Array.from(articleList.getElementsByClassName("card"));
+const articles = Array.from(articulos.getElementsByClassName("card"));
 // console.log(articles);
 // agregar un evento para escuchar cuando se envía el formulario
 form.addEventListener("submit", function (event) {
-    event.preventDefault(); // prevenir la recarga de la página
+    event.preventDefault();
 
     const searchTerm = input.value.toLowerCase(); // obtener el término de búsqueda
     console.log(searchTerm);
