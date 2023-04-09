@@ -1,15 +1,41 @@
-@media (max-width: 576px) {
-    .margin-sm-top {
-      margin-top: .8rem;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+.font{
+    font-family: 'Playfair Display', serif;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-main{
-    flex-grow: 1;
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Playfair Display', serif;
+}
+
+main {
+  flex-grow: 1;
+}
+
+/*Dispositivos pequeños*/
+@media all and (max-width: 767px) {
+  .margin-sm-top {
+    margin-top: 0.8rem;
+  }
+  .articlePrincipal {
+    margin-bottom: 0;
+  }
+}
+/*Disp medianos*/
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .articlePrincipal {
+    margin-bottom: 0;
+  }
+}
+/*Disp grandes*/
+@media all and (min-width: 992px) {
+  .articlePrincipal {
+    margin-bottom: 0;
+  }
 }
