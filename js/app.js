@@ -1,20 +1,20 @@
-const form = document.querySelector("form");
-const input = form.querySelector("input");
-const articulos = document.getElementById("articulo");
-
+let form = document.querySelector("form");
+let input = form.querySelector("input");
+let articulos = document.getElementById("articulo");
 // obtener los elementos de la lista de artículos
-const articles = Array.from(articulos.getElementsByClassName("card"));
-// console.log(articles);
+let articles = Array.from(articulos.getElementsByClassName("card"));
+
 // agregar un evento para escuchar cuando se envía el formulario
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const searchTerm = input.value.toLowerCase(); // obtener el término de búsqueda
+    let searchTerm = input.value.toLowerCase();
+
     console.log(searchTerm);
     // filtrar los artículos que contengan el término de búsqueda
-    const filteredArticles = articles.filter((article) => {
-        const title = article.querySelector(".card-title").textContent.toLowerCase();
-        const text = article.querySelector(".card-text").textContent.toLowerCase();
+    let filteredArticles = articles.filter((article) => {
+        let title = article.querySelector(".card-title").textContent.toLowerCase();
+        let text = article.querySelector(".card-text").textContent.toLowerCase();
         return title.includes(searchTerm) || text.includes(searchTerm);
     });
 
@@ -23,9 +23,32 @@ form.addEventListener("submit", function (event) {
         if (filteredArticles.includes(article)) {
             article.style.display = "block";
         } else {
+            // borramos los articulos que no tenfgan coincidencia con la busqueda
             article.style.display = "none";
         }
     });
 });
 
-// agregar un evento para escuchar cuando se borra el contenido del campo de entrada
+function mostrarCartel() {
+    let div = document.createElement("div");
+
+    div.innerHTML = `
+            <div class="col">
+                    <div class="card h-100">
+                        
+                        <div class="card-body">
+                            <h5 class="card-title">
+                            No se encontraron articulos relacionados con tu busqueda
+                            </h5>
+                        </div>
+                    </div>
+            </div>
+    `;
+
+    articulos.appendChild(div);
+}
+
+function eliminarCartel() {
+    articulos.removeChild(mostrarTarea.children[3]);
+    listasTareas.pop();
+}
