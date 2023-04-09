@@ -3,36 +3,38 @@ let input = form.querySelector("input");
 let articulos = document.getElementById("articulo");
 
 // obtener los elementos de la lista de artículos
-let articles = Array.from(articulos.getElementsByClassName("card"));
+let arrayDeArticulos = Array.from(articulos.getElementsByClassName("card"));
 
 // agregar un evento para escuchar cuando se envía el formulario
 form.addEventListener("submit", function (e) {
-    // console.log(articulos.children[4]);
-    //
     e.preventDefault();
 
     let inputValue = input.value.toLowerCase();
+    if (inputValue === "") {
+        alert("El campo está vacío");
+    } else {
+        // filtrar los artículos que contengan el término de búsqueda
+        let filtrosArticulos = arrayDeArticulos.filter((article) => {
+            let title = article.querySelector(".card-title").textContent.toLowerCase();
+            let text = article.querySelector(".card-text").textContent.toLowerCase();
+            return title.includes(inputValue) || text.includes(inputValue);
+        });
 
-    // filtrar los artículos que contengan el término de búsqueda
-    let filtrosArticulos = articles.filter((article) => {
-        let title = article.querySelector(".card-title").textContent.toLowerCase();
-        let text = article.querySelector(".card-text").textContent.toLowerCase();
-        return title.includes(inputValue) || text.includes(inputValue);
-    });
+        // mostrar u ocultar los artículos según los resultados de búsqueda
+        arrayDeArticulos.forEach((article) => {
+            if (filtrosArticulos.includes(article)) {
+                article.style.display = "block";
+            } else {
+                // borramos los articulos que no tenfgan coincidencia con la busqueda
+                article.style.display = "none";
+            }
+        });
 
-    // mostrar u ocultar los artículos según los resultados de búsqueda
-    articles.forEach((article) => {
-        if (filtrosArticulos.includes(article)) {
-            article.style.display = "block";
-        } else {
-            // borramos los articulos que no tenfgan coincidencia con la busqueda
-            article.style.display = "none";
-        }
-    });
-    console.log(filtrosArticulos.length);
-    filtrosArticulos.length >= 1 ? eliminarCartel() : mostrarCartel();
+        filtrosArticulos.length >= 1 ? eliminarCartel() : mostrarCartel();
+    }
 });
 
+// mostrame un cartel de busqueda fallida
 function mostrarCartel() {
     let div = document.createElement("div");
 
@@ -52,15 +54,19 @@ function mostrarCartel() {
     articulos.appendChild(div);
 }
 
+// elimina el cartel
 function eliminarCartel() {
-    articulos.removeChild(articulos.children[4]);
+    articulos.children[4] !== undefined
+        ? articulos.removeChild(articulos.children[4])
+        : "";
 }
 // agregar un evento para escuchar cuando se borra el contenido del campo de entrada
 input.addEventListener("input", function () {
     if (input.value.trim() === "") {
-        // si el campo está vacío, mostrar todos los artículos nuevamente
-        articles.forEach((article) => {
+        // si el campo está vacío mostrar todos los artículos nuevamente
+        arrayDeArticulos.forEach((article) => {
             article.style.display = "block";
         });
+        eliminarCartel();
     }
 });
