@@ -31,6 +31,7 @@
   </head>
   <body>
     <header class="container">
+      <!-- Banner con el titulo de la pagina y los botones de suscripcion e iniciar sesion, solo visible en dispotivios grandes -->
       <section class="d-none d-lg-flex justify-content-between mt-4">
         <a href="index.html" class="text-decoration-none text-dark">
             <h1 class="font">La Aspirina Blog</h1>
@@ -45,8 +46,10 @@
         </div>
       </section>
       <hr class="d-none d-lg-flex" />
+      <!-- Nav -->
       <nav class="navbar navbar-expand-lg margin-sm-top">
         <div class="container-fluid">
+          <!-- El titulo del nav se oculta en dispotivos grandes-->
           <a class="navbar-brand d-lg-none tituloNav" href="#">La Aspirina Blog</a>
           <button
             class="navbar-toggler border-0"
@@ -131,7 +134,8 @@
       <hr />
     </header>
     <main class="container">
-      <section class="">
+      <!--En este section se encuentran los 2 primeros articulos que se ven mas grandes-->
+      <section>
         <article
           class="d-flex justify-content-around flex-column flex-md-row articlePrincipal"
         >
@@ -160,8 +164,8 @@
         </article>
         <article class="d-flex justify-content-around flex-column flex-md-row-reverse flex-md-row text-md-end my-4">
           <div class="border-bottom d-flex flex-column">
-            <a href="#" class="text-decoration-none text-dark">
-                <h5 class="display-5 flex-grow-1">
+            <a href="#" class="text-decoration-none text-dark  flex-grow-1">
+                <h5 class="display-5">
                     <strong>¿Se puede prevenir la violencia de género con las ciencias del comportamiento?</strong>
                 </h5>
             </a>
@@ -176,6 +180,7 @@
           </figure>
         </article>
       </section>
+      <!-- En este section contiene los demas articulos recomendados, esta hecho con grillas y cards, cada card tiene su boton de ver mas para redireccionar a la pag del articulo-->
       <section>
         <hr />
         <h6 class="display-6">Articulos recomendados:</h6>
