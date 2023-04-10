@@ -40,8 +40,7 @@ function mostrarCartel() {
 
     div.innerHTML = `
             <div class="col">
-                    <div class="card h-100">
-                        
+                    <div class="card text-bg-danger h-100">                        
                         <div class="card-body">
                             <h5 class="card-title">
                             No se encontraron articulos relacionados con tu busqueda
