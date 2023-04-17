@@ -22,6 +22,15 @@ main {
   flex-grow: 1;
 }
 
+/*Sobre nosotros*/
+.sobre-nosotros-img-personal {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 1rem 0;
+  border-radius: 50%;
+}
+
 /*Dispositivos pequeños*/
 @media all and (max-width: 767px) {
   .margin-sm-top {
