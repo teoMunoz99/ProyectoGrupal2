@@ -314,6 +314,51 @@
         </p>
         <hr>
       </section>
+      <section class="container card p-4">
+        <h3>Comentarios</h3>
+        <!--Lista de comentarios-->
+        <article class="container" id="contenedorUl">
+          <ul class="list-group">
+            <li class="d-flex justify-content-between border-bottom mb-5">
+                <p>
+                  Mariana Avila: Me encanto! Un buen artículo sobre la menopausia
+                  puede ayudar a empoderar a las mujeres al darles información
+                  sobre los cambios que pueden esperar en su cuerpo y cómo pueden
+                  manejarlos.
+                </p>
+              </li>
+              <li class="d-flex justify-content-between border-bottom mb-5">
+                <p>
+                  Sofia Delgado: Es lamentable que la menopausia todavía sea un
+                  tema que no se discute lo suficiente en la sociedad.
+                </p>
+              </li>
+          </ul>
+        </article>
+        <!--Ingreso de comentario-->
+        <article class="container mt-4">
+          <form>
+            <div class="form-floating">
+              <input
+                type="text"
+                class="form-control"
+                id="inputComentarios"
+                placeholder="Comentarios"
+                autocomplete="off"
+                required
+              />
+              <label for="inputComentarios">Dejá tu comentario</label>
+            </div>
+            <button
+              type="button"
+              class="btn btn-warning my-2"
+              id="botonAgregar"
+            >
+              Comentar
+            </button>
+          </form>
+        </article>
+      </section>
     </main>
     <footer class="container">
       <hr />
