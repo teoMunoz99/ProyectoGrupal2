@@ -11,9 +11,14 @@ Bienvenido/a al sitio web sobre hábitos saludables. Este sitio fue creado utili
 - HTML **V5**
 - JAVASCRIPT
 
-## Como clonar el respositorio 🖨
 
+
+## Aquì la pagina deployada en Netlify [La Aspirina Blog](https://la-aspirina-blog.netlify.app/)
+
+
+## Como clonar el respositorio 🖨
 ```bash
+
 git clone https://github.com/teoMunoz99/ProyectoGrupal2
 
 ## Autor 👦
@@ -22,3 +27,4 @@ git clone https://github.com/teoMunoz99/ProyectoGrupal2
 - Sofia Delgado
 - Mariana Avila
 ### Comision: 39i
+
